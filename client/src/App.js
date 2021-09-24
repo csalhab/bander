@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import LoginButton from "./components/LoginButton";
+import SearchBar from "./components/SearchBar";
+import UserCard from "./components/UserCards";
+import SearchButton from "./components/SearchButton";
 
 function App() {
   return (
@@ -17,6 +21,10 @@ function App() {
         >
           Learn React
         </a>
+        <LoginButton>Login</LoginButton>
+        <SearchBar>SearchBar</SearchBar>
+        <UserCard></UserCard>
+        <SearchButton></SearchButton>
       </header>
     </div>
   );

@@ -27,11 +27,17 @@ function App() {
               <Home />
             </Route>
             {/* Create a route to display a User's comments based on its `UserID` provided in the URL */}
-            <Route exact path="/UserProfile/:thoughtId">
+            <Route exact path="/profile">
               <UserProfile />
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/search">
+                <Search/>
+            </Route>
+            <Route exact path="/favorites">
+              <Favorites/>
             </Route>
           </div>
           

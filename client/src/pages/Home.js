@@ -1,10 +1,16 @@
 import React from "react";
-import Header from "../components/Header";
+import SignupButton from "../components/SignupButton";
+import LoginButton from "../components/LoginButton";
+import SearchBar from "../components/SearchBar";
+import SearchButton from "../components/SearchButton";
 
 const Home = () => {
   return (
     <div className="container">
-      <p>This is the homepage</p>
+      <LoginButton></LoginButton>
+      <SignupButton></SignupButton>
+      <SearchBar></SearchBar>
+      <SearchButton></SearchButton>
     </div>
   );
 };

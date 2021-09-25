@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Search from "./pages/Search";
 import UserProfile from "./pages/UserProfile";
 import Header from "./components/Header";
+import Signup from "./pages/Signup";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
             </Route>
             <Route exact path="/search">
               <Search />

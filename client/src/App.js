@@ -4,6 +4,7 @@ import LoginButton from "./components/LoginButton";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCards";
 import SearchButton from "./components/SearchButton";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <SearchBar>SearchBar</SearchBar>
         <UserCard></UserCard>
         <SearchButton></SearchButton>
+        <Header></Header>
       </header>
     </div>
   );

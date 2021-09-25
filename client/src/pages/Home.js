@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "../components/Header";
+import SignupButton from "../components/SignupButton";
+import LoginButton from "../components/LoginButton";
 
 const Home = () => {
   return (
     <div className="container">
-      <p>This is the homepage</p>
+      <LoginButton></LoginButton>
+      <SignupButton></SignupButton>
     </div>
   );
 };

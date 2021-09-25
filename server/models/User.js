@@ -24,6 +24,14 @@ const userSchema = new Schema({
     type: Number,
     required: true,
   },
+  instrument: {
+    type: String,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
 });
 
 // hash user password

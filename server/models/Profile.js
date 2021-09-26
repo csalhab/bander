@@ -17,6 +17,22 @@ const profileSchema = new Schema({
   reviews: {
     type: String,
   },
+  avaiable: {
+    type: Boolean,
+  },
+  zip: {
+    type: Number,
+  },
+  instrument: [
+    {
+      type: String,
+    },
+  ],
+  category: [
+    {
+      type: String,
+    },
+  ],
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",

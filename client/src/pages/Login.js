@@ -1,44 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
+import { Form, Button, Alert } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const Login = () => {
+  const [userFormData, setUserFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    console.log("inside LoginForm.js handleFormSubmit function!");
+    console.log("inside LoginForm.js userFormData: ", userFormData);
+    event.preventDefault();
+    try {
+      const { data } = await login({
+        variables: { ...userFormData },
+      });
+
+      console.log(
+        "inside LoginForm.js handleFormSubmit function, data: ",
+        data
+      );
+
+      Auth.login(data.login.token);
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="Enter email"
-        ></input>
-        <small id="emailHelp" class="form-text text-muted">
-          We'll never share your email with anyone else.
-        </small>
+    <>
+      <div>LOGIN: </div>
+      <Form onSubmit={handleFormSubmit}>
+        <div className="form-group">
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            className="form-control"
+            name="username"
+            placeholder="Enter username"
+            onChange={handleInputChange}
+            value={userFormData.username}
+            required
+          ></input>
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email address</label>
+          <input
+            type="email"
+            className="form-control"
+            name="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          ></input>
+          <small id="emailHelp" className="form-text text-muted">
+            We'll never share your email with anyone else.
+          </small>
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            placeholder="Password"
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          ></input>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </Form>
+      <div>
+        <a href="/signup">SIGNUP instead</a>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password"
-        ></input>
-      </div>
-      <div class="form-check">
-        <input
-          type="checkbox"
-          class="form-check-input"
-          id="exampleCheck1"
-        ></input>
-        <label class="form-check-label" for="exampleCheck1">
-          Check me out
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">
-        Submit
-      </button>
-    </form>
+    </>
   );
 };
 

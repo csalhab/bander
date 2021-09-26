@@ -84,9 +84,6 @@ const Login = () => {
           Submit
         </button>
       </Form>
-      <div>
-        <a href="/signup">SIGNUP instead</a>
-      </div>
     </>
   );
 };

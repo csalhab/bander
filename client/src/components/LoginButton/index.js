@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 function LoginButton(props) {
   return (
     <div className="d-grid gap-2">
-      <Button href="/Login" variant="primary" size="lg">
+      <Button href="/login" variant="primary" size="lg">
         Login
       </Button>
       {/* <Button variant="secondary" size="lg">

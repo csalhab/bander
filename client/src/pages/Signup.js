@@ -91,9 +91,6 @@ const Signup = () => {
           Submit
         </button>
       </Form>
-      <div>
-        <a href="/login">LOGIN instead</a>
-      </div>
     </>
   );
 };

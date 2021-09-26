@@ -10,17 +10,15 @@ const Home = () => {
   if (Auth.loggedIn()) {
     return (
       <div className="container">
-        <LogoutButton></LogoutButton>
-        <p />
         <SearchBar></SearchBar>
         <SearchButton></SearchButton>
+        <div>you are logged in, info to be added ..</div>
       </div>
     );
   } else {
     return (
       <div className="container">
-        <LoginButton></LoginButton>
-        <SignupButton></SignupButton>
+        <div>you are logged out, info to be added ..</div>
       </div>
     );
   }

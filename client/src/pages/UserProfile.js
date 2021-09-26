@@ -1,5 +1,5 @@
 import React from "react";
-// import UserCard from "./src/UserCards",
+// import Auth from "../utils/auth";
 
 const UserProfile = () => {
   return (

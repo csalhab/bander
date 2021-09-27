@@ -35,8 +35,8 @@ const typeDefs = gql`
     login(username: String!, email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addProfile(
-      available: String!
-      zip: Int!
+      available: Boolean!
+      zip: String!
       instrument: [String]!
       category: [String]!
       description: String!

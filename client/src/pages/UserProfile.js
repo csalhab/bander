@@ -6,7 +6,14 @@ import { QUERY_PROFILE } from "../utils/queries";
 
 const UserProfile = () => {
   const [formState, setFormState] = useState({
+    available: false,
+    zip: "",
+    instrument: "",
+    category: "",
     description: "",
+    image: "",
+    facts: "",
+    bio: "",
   });
 
   const [addProfile, { error }] = useMutation(ADD_PROFILE, {
@@ -39,9 +46,44 @@ const UserProfile = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+    if (name === "available") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "available") {
+      setFormState({ ...formState, [name]: value });
+    }
+    if (name === "zip") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "zip") {
+      setFormState({ ...formState, [name]: value });
+    }
+    if (name === "instrument") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "instrument") {
+      setFormState({ ...formState, [name]: value });
+    }
+    if (name === "category") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "category") {
+      setFormState({ ...formState, [name]: value });
+    }
     if (name === "description") {
       setFormState({ ...formState, [name]: value });
     } else if (name !== "description") {
+      setFormState({ ...formState, [name]: value });
+    }
+    if (name === "image") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "image") {
+      setFormState({ ...formState, [name]: value });
+    }
+    if (name === "facts") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "facts") {
+      setFormState({ ...formState, [name]: value });
+    }
+    if (name === "bio") {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== "bio") {
       setFormState({ ...formState, [name]: value });
     }
   };

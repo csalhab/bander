@@ -4,6 +4,8 @@ import SignupButton from "../SignupButton";
 import UserProfile from "../UserProfileButton";
 import Auth from "../../utils/auth";
 import Nav from "react-bootstrap/Nav";
+import LogoutButton from "../LogoutButton";
+import { Link } from "react-router-dom";
 
 const styles = {
   buttonContainer: {
@@ -15,13 +17,13 @@ const styles = {
   },
 };
 
-function LogoutButton(props) {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
-  return logout;
-}
+// function LogoutButton(props) {
+//   const logout = (event) => {
+//     event.preventDefault();
+//     Auth.logout();
+//   };
+//   return logout;
+// }
 
 function Header({ children }) {
   return (
@@ -69,7 +71,7 @@ function Header({ children }) {
                     </a>
                   </li>
                   <li class="nav-item">
-                    <Nav.Link onClick={LogoutButton}>Logout</Nav.Link>
+                    <Nav.Link onClick={() => Auth.logout()}>Logout</Nav.Link>
                   </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">

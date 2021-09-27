@@ -1,16 +1,16 @@
-import React from "react";
-import SearchBar from "../components/SearchBar";
-import SearchButton from "../components/SearchButton";
+const SearchBar = () => (
+    <form action="/" method="get">
+        <label htmlFor="header-search">
+            <span className="visually-hidden">Search for Instruments or Musicians</span>
+        </label>
+        <input
+            type="text"
+            id="header-search"
+            placeholder="Search"
+            name="s" 
+        />
+        <button type="submit">Search</button>
+    </form>
+);
 
-const Search = () => {
-  return (
-    <div className="container">
-      <p>Find other musicians and start Jammin'!.</p>
-      <p />
-      <SearchBar></SearchBar>
-      <SearchButton></SearchButton>
-    </div>
-  );
-};
-
-export default Search;
+export default SearchBar;

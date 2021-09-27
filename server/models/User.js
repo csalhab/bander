@@ -17,6 +17,34 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    available: {
+      type: Boolean,
+    },
+    zip: {
+      type: String,
+    },
+    instrument: [
+      {
+        type: String,
+      },
+    ],
+    category: [
+      {
+        type: String,
+      },
+    ],
+    description: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
+    facts: {
+      type: String,
+    },
+    bio: {
+      type: String,
+    },
   },
   // set this to use virtual below
   {

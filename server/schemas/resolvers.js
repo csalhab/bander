@@ -39,7 +39,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addProfile: async (
+    updateUserProfile: async (
       parent,
       {
         available,
@@ -51,19 +51,29 @@ const resolvers = {
         facts,
         bio,
         reviews,
-      }
+      },
+      context
     ) => {
       console.log("inside resolver addProfile!");
-      return Profile.create({
-        available,
-        zip,
-        instrument,
-        category,
-        description,
-        image,
-        facts,
-        bio,
-      });
+      const user = await User.findById(context.user._id);
+      if (user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+            available,
+            zip,
+            instrument,
+            category,
+            description,
+            image,
+            facts,
+            bio,
+          },
+          { new: true }
+        );
+      } else {
+        throw new AuthenticationError("You must be logged in.");
+      }
     },
   },
 };

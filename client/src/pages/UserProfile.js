@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
+import React, { useState, useEffect } from "react";
+import { useProfileContext } from "../utils/GlobalState";
+import { UPDATE_PROFILE } from "../utils/actions";
+import { useMutation, useQuery } from "@apollo/client";
 
 import { ADD_PROFILE } from "../utils/mutations";
-import { QUERY_PROFILE } from "../utils/queries";
+import { QUERY_PROFILE, GET_ME } from "../utils/queries";
 
 const UserProfile = () => {
   const [formState, setFormState] = useState({
@@ -15,6 +17,17 @@ const UserProfile = () => {
     facts: "",
     bio: "",
   });
+
+  const [state, dispatch] = useProfileContext();
+
+  const { loading, data } = useQuery(GET_ME);
+  console.log(data);
+  useEffect(() => {
+    if (data) {
+      dispatch({ type: UPDATE_PROFILE, payload: data.me });
+      setFormState(data.me);
+    }
+  }, [data]);
 
   const [addProfile, { error }] = useMutation(ADD_PROFILE, {
     update(cache, { data: { addProfile } }) {
@@ -46,46 +59,7 @@ const UserProfile = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === "available") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "available") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "zip") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "zip") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "instrument") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "instrument") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "category") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "category") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "description") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "description") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "image") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "image") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "facts") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "facts") {
-      setFormState({ ...formState, [name]: value });
-    }
-    if (name === "bio") {
-      setFormState({ ...formState, [name]: value });
-    } else if (name !== "bio") {
-      setFormState({ ...formState, [name]: value });
-    }
+    setFormState({ ...formState, [name]: value });
   };
 
   return (
@@ -97,21 +71,22 @@ const UserProfile = () => {
         </div>
         <div class="col">
           <div>
-            <h2>name</h2>
-            <p>{addProfile.description}description</p>
+            <h2>My username: {state.me.username}</h2>
+            <p>Description: {state.me.description}</p>
           </div>
         </div>
         <div class="col">
-          <p>contact info/email/fax</p>
+          <p>Email: {state.me.email}</p>
+          <p>Facts: {state.me.facts}</p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <p>bio</p>
+          <p>My Bio: {state.me.bio}</p>
         </div>
       </div>
       <div>
-        <h3>Add information to your profile:</h3>
+        <h3>Add/Edit information to your profile:</h3>
         <form
           className="flex-row justify-center justify-space-between-md align-center"
           onSubmit={handleFormSubmit}

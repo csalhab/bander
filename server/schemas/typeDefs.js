@@ -6,6 +6,14 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    available: Boolean
+    zip: String
+    instrument: [String]
+    category: [String]
+    description: String
+    image: String
+    facts: String
+    bio: String
   }
 
   type Profile {
@@ -34,7 +42,7 @@ const typeDefs = gql`
   type Mutation {
     login(username: String!, email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addProfile(
+    updateUserProfile(
       available: Boolean!
       zip: String!
       instrument: [String]!
@@ -43,7 +51,7 @@ const typeDefs = gql`
       image: String!
       facts: String!
       bio: String!
-    ): Profile
+    ): User
   }
 `;
 module.exports = typeDefs;

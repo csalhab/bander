@@ -6,6 +6,7 @@ import SearchButton from "../components/SearchButton";
 import LogoutButton from "../components/LogoutButton";
 import Auth from "../utils/auth";
 import Footer from "../components/Footer";
+import UserCard from "../components/UserCard";
 
 const Home = () => {
   if (Auth.loggedIn()) {
@@ -18,6 +19,18 @@ const Home = () => {
           Click the button when you're ready to go looking for bandmates!
         </div>
         {/* <Footer></Footer> */}
+
+        <div class="row">
+          <div class="col-sm">
+            <UserCard />
+          </div>
+          <div class="col-sm">
+            <UserCard />
+          </div>
+          <div class="col-sm">
+            <UserCard />
+          </div>
+        </div>
       </div>
     );
   } else {

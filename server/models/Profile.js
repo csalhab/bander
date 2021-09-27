@@ -1,22 +1,6 @@
 const { Schema, model } = require("mongoose");
 
 const profileSchema = new Schema({
-  description: {
-    type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-  },
-  facts: {
-    type: String,
-  },
-  bio: {
-    type: String,
-  },
-  reviews: {
-    type: String,
-  },
   avaiable: {
     type: Boolean,
   },
@@ -33,10 +17,25 @@ const profileSchema = new Schema({
       type: String,
     },
   ],
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  description: {
+    type: String,
   },
+  image: {
+    type: String,
+  },
+  facts: {
+    type: String,
+  },
+  bio: {
+    type: String,
+  },
+  // reviews: {
+  //   type: String,
+  // },
+  // user: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
 });
 
 const Profile = model("Profile", profileSchema);

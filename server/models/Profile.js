@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
 
 const profileSchema = new Schema({
-  avaiable: {
+  available: {
     type: Boolean,
   },
   zip: {
-    type: Number,
+    type: String,
   },
   instrument: [
     {

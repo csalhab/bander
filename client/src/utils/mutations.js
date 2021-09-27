@@ -25,7 +25,16 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_PROFILE = gql`
-  mutation addProfile($description: String!) {
+  mutation addProfile(
+    $available: Boolean!
+    $zip: String!
+    $instrument: [String]!
+    $category: [String]!
+    $description: String!
+    $image: String!
+    $facts: String!
+    $bio: String!
+  ) {
     addProfile(
       available: $available
       zip: $zip

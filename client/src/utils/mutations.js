@@ -23,3 +23,28 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_PROFILE = gql`
+  mutation addProfile($description: String!) {
+    addProfile(
+      available: $available
+      zip: $zip
+      instrument: $instrument
+      category: $category
+      description: $description
+      image: $image
+      facts: $facts
+      bio: $bio
+    ) {
+      _id
+      available
+      zip
+      instrument
+      category
+      description
+      image
+      facts
+      bio
+    }
+  }
+`;

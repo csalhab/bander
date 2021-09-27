@@ -7,6 +7,10 @@ const resolvers = {
       console.log(await User.findById(context.user._id));
       return await User.findById(context.user._id);
     },
+    getProfile: async () => {
+      console.log("inside resolvers, getProfile!");
+      return Profile.find();
+    },
   },
 
   Mutation: {
@@ -34,6 +38,32 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addProfile: async (
+      parent,
+      {
+        available,
+        zip,
+        instrument,
+        category,
+        description,
+        image,
+        facts,
+        bio,
+        reviews,
+      }
+    ) => {
+      console.log("inside resolver addProfile!");
+      return Profile.create({
+        available,
+        zip,
+        instrument,
+        category,
+        description,
+        image,
+        facts,
+        bio,
+      });
     },
   },
 };

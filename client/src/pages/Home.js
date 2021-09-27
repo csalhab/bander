@@ -12,7 +12,10 @@ const Home = () => {
       <div className="container">
         <SearchBar></SearchBar>
         <SearchButton></SearchButton>
-        <div>you are logged in, info to be added ..</div>
+        <div>
+          Input the instrument or role you are looking for in the search bar!
+          Click the button when you're ready to go looking for bandmates!
+        </div>
       </div>
     );
   } else {

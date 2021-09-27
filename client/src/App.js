@@ -17,6 +17,7 @@ import Search from "./pages/Search";
 import UserProfile from "./pages/UserProfile";
 import Header from "./components/Header";
 import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

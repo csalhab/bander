@@ -6,6 +6,16 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
+        username
+        email
+        available
+        zip
+        instrument
+        category
+        description
+        image
+        facts
+        bio
       }
     }
   }
@@ -25,7 +35,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_PROFILE = gql`
-  mutation addProfile(
+  mutation updateUserProfile(
     $available: Boolean!
     $zip: String!
     $instrument: [String]!
@@ -35,7 +45,7 @@ export const ADD_PROFILE = gql`
     $facts: String!
     $bio: String!
   ) {
-    addProfile(
+    updateUserProfile(
       available: $available
       zip: $zip
       instrument: $instrument
@@ -46,6 +56,9 @@ export const ADD_PROFILE = gql`
       bio: $bio
     ) {
       _id
+      username
+      email
+      password
       available
       zip
       instrument

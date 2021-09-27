@@ -20,6 +20,8 @@ import Signup from "./pages/Signup";
 import Footer from "./components/Footer";
 import "./style.css";
 
+import { ProfileProvider } from "./utils/GlobalState";
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,34 +49,36 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              {/* Create a route to display a User's comments based on its `UserID` provided in the URL */}
-              <Route exact path="/profile">
-                <UserProfile />
-              </Route>
-              <Route exact path="/login">
-                <Login />
-              </Route>
-              <Route exact path="/signup">
-                <Signup />
-              </Route>
-              <Route exact path="/search">
-                <Search />
-              </Route>
-              <Route exact path="/favorites">
-                <Favorites />
-              </Route>
-            </Switch>
+      <ProfileProvider>
+        <Router>
+          <div className="flex-column justify-flex-start min-100-vh">
+            <Header />
+            <div className="container">
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                {/* Create a route to display a User's comments based on its `UserID` provided in the URL */}
+                <Route exact path="/profile">
+                  <UserProfile />
+                </Route>
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+                <Route exact path="/signup">
+                  <Signup />
+                </Route>
+                <Route exact path="/search">
+                  <Search />
+                </Route>
+                <Route exact path="/favorites">
+                  <Favorites />
+                </Route>
+              </Switch>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </ProfileProvider>
     </ApolloProvider>
   );
 }

@@ -3,6 +3,7 @@ import { Form, Button, Alert } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { useProfileContext } from "../utils/GlobalState";
 
 const Signup = () => {
   // set initial form state
@@ -11,6 +12,9 @@ const Signup = () => {
     email: "",
     password: "",
   });
+
+  //Global Context
+  const [state, dispatch] = useProfileContext();
 
   const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -21,15 +25,16 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("inside handleFormSubmit!");
-    console.log(userFormData);
 
     try {
       const { data } = await addUser({
         variables: { ...userFormData },
       });
 
-      console.log("inside SignupForm.js handleFormSubmit function ", data);
+      console.log(
+        "inside SignupForm.js handleFormSubmit function data: ",
+        data
+      );
 
       Auth.login(data.addUser.token);
     } catch (err) {

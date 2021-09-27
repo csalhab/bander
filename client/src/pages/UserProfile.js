@@ -128,7 +128,7 @@ const UserProfile = () => {
               Available
             </label>
           </div>
-          <div className="col-12 col-lg-9">
+          <div class="form-group" className="col-12 col-lg-9">
             <input
               name="zip"
               placeholder="Add a zip.."
@@ -137,7 +137,7 @@ const UserProfile = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-12">
+          <div class="form-group" className="col-12">
             <textarea
               name="instrument"
               placeholder="Add an instrument .."
@@ -147,7 +147,7 @@ const UserProfile = () => {
               onChange={handleChange}
             ></textarea>
           </div>
-          <div className="col-12 col-lg-9">
+          <div class="form-group" className="col-12 col-lg-9">
             <input
               name="category"
               placeholder="Add a category.."
@@ -156,7 +156,7 @@ const UserProfile = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-12 col-lg-9">
+          <div class="form-group" className="col-12 col-lg-9">
             <input
               name="description"
               placeholder="Add a description.."
@@ -165,7 +165,7 @@ const UserProfile = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-12 col-lg-9">
+          <div class="form-group" className="col-12 col-lg-9">
             <input
               name="image"
               placeholder="Add an image.."
@@ -174,7 +174,7 @@ const UserProfile = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-12 col-lg-9">
+          <div class="form-group" className="col-12 col-lg-9">
             <input
               name="facts"
               placeholder="Add facts.."
@@ -183,7 +183,7 @@ const UserProfile = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-12">
+          <div class="form-group" className="col-12">
             <textarea
               name="bio"
               placeholder="Add your bio .."
@@ -194,7 +194,7 @@ const UserProfile = () => {
             ></textarea>
           </div>
 
-          <div className="col-12 col-lg-3">
+          <div class="form-group" className="col-12 col-lg-3">
             <button className="btn btn-primary btn-block py-3" type="submit">
               Add Profile
             </button>

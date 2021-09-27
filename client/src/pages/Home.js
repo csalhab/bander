@@ -9,6 +9,7 @@ import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import Footer from "../components/Footer";
+import UserCard from "../components/UserCard";
 
 const Home = () => {
   const [state, dispatch] = useProfileContext();
@@ -26,6 +27,18 @@ const Home = () => {
           Click the button when you're ready to go looking for bandmates!
         </div>
         {/* <Footer></Footer> */}
+
+        <div class="row">
+          <div class="col-sm">
+            <UserCard />
+          </div>
+          <div class="col-sm">
+            <UserCard />
+          </div>
+          <div class="col-sm">
+            <UserCard />
+          </div>
+        </div>
       </div>
     );
   } else {

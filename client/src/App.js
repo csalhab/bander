@@ -18,6 +18,7 @@ import UserProfile from "./pages/UserProfile";
 import Header from "./components/Header";
 import Signup from "./pages/Signup";
 import Footer from "./components/Footer";
+import "./style.css";
 
 import { ProfileProvider } from "./utils/GlobalState";
 

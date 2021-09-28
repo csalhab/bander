@@ -1,5 +1,33 @@
-.jumbotron {
-  background-color: rgb(49, 48, 48);
-  color: white;
+#jumbotron {
   text-align: center;
+  margin-bottom: 0px;
+}
+
+#navbar {
+  color: white;
+  background-color: #494848;
+}
+
+#nav-submit-btn {
+  border-color: red;
+  color: red;
+}
+
+#nav-submit-btn:hover {
+  background-color: red;
+  color: black;
+}
+
+#red-border {
+  border-color: red;
+}
+
+#favorite-btn {
+  border-color: red;
+  color: red;
+}
+
+#favorite-btn:hover {
+  background-color: red !important;
+  color: black;
 }

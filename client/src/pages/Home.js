@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProfileContext } from "../utils/GlobalState";
 import SignupButton from "../components/SignupButton";
 import LoginButton from "../components/LoginButton";
@@ -10,6 +10,64 @@ import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import Footer from "../components/Footer";
 import UserCard from "../components/UserCard";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+
+// const searchUser = () => {
+//   const [searchedUsers, setSearchedusers] = useState([]);
+//   const [searchInput, setSearchInput] = useState("");
+//   const [savedUserIds, setSavedUserIds] = useState(getSavedUserIds());
+
+//   // Save Users to Favorites
+//   useEffect(() => {
+//     return () => savedUserIds(savedUserIds);
+//   });
+
+//   const [saveUser, { error }] = useMutation(SAVE_USER, {
+//     update(cache, data, saveUser) {
+//       try {
+//         const { me } = cache.readQuery({ query: GET_ME });
+
+//         cache.writeQuery({
+//           query: GET_ME,
+//           data: { me: saveUser },
+//         });
+//       } catch (e) {
+//         console.error(e);
+//       }
+//     },
+//   });
+// };
+
+// const handleFormSubmit = async (event) => {
+//   event.preventDefault();
+
+//   if (!searchInput) {
+//     return false;
+//   }
+
+//   try {
+//     const response = await searchUsers(searchInput);
+
+//     if (!response.ok) {
+//       throw new Error("something went wrong!");
+//     }
+
+//     const { items } = await response.json();
+
+//     const userData = items.map((user) => ({
+//       userName: user.username,
+//       email: user.email,
+//       description: user.description,
+//       instrument: user.instrument,
+//     }));
+
+//     setSearchedUsers("userData");
+//     setSearchInput("");
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
 
 const Home = () => {
   const [state, dispatch] = useProfileContext();
@@ -19,7 +77,7 @@ const Home = () => {
 
   if (Auth.loggedIn()) {
     return (
-      <div className="container">
+      <div className="container text-center text-white bg-dark">
         <SearchBar></SearchBar>
         <SearchButton></SearchButton>
         <div>
@@ -28,22 +86,72 @@ const Home = () => {
         </div>
         {/* <Footer></Footer> */}
 
-        <div class="row">
+        <div class="row text-center">
           <div class="col-sm">
-            <UserCard />
+            <Card
+              id="red-border"
+              className="bg-dark text-white"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title className="name">John Petrucci</Card.Title>
+                <Card.Text className="userShortBio">300 BPM or bust.</Card.Text>
+                <Card.Text className="userInstrument">Guitar </Card.Text>
+                <Card.Text className="userContact">
+                  noodles@dreamtheater.com
+                </Card.Text>
+                <Button className="bg-dark" id="favorite-btn" variant="primary">
+                  Favorite
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
           <div class="col-sm">
-            <UserCard />
+            <Card
+              id="red-border"
+              className="bg-dark text-white"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title className="name">Adam Jones</Card.Title>
+                <Card.Text className="userShortBio">
+                  If you've played in 4/4 in the last 7 years, don't bother.
+                </Card.Text>
+                <Card.Text className="userInstrument">Guitar </Card.Text>
+                <Card.Text className="userContact">
+                  adamjones@tool.net
+                </Card.Text>
+                <Button className="bg-dark" id="favorite-btn" variant="primary">
+                  Favorite
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
           <div class="col-sm">
-            <UserCard />
+            <Card
+              id="red-border"
+              className="bg-dark text-white"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title className="name">Mikael Akerfeldt</Card.Title>
+                <Card.Text className="userShortBio">
+                  Sorrow! I only write songs about sorrow!
+                </Card.Text>
+                <Card.Text className="userInstrument">Guitar </Card.Text>
+                <Card.Text className="userContact">mikael@opeth.com</Card.Text>
+                <Button className="bg-dark" id="favorite-btn" variant="primary">
+                  Favorite
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="container">
+      <div className="container text-white bg-dark">
         <div>you are logged out, info to be added ..</div>
       </div>
     );

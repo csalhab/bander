@@ -13,12 +13,19 @@ import Button from "react-bootstrap/Button";
 
 function UserCard() {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card
+      id="red-border"
+      className="bg-dark text-white"
+      style={{ width: "18rem" }}
+    >
       <Card.Body>
         <Card.Title className="name">User Name</Card.Title>
         <Card.Text className="userShortBio">User Description</Card.Text>
         <Card.Text className="userInstrument">User Instrument </Card.Text>
-        <Button variant="primary">Go to Profile</Button>
+        <Card.Text className="userContact">User Contact</Card.Text>
+        <Button className="bg-dark" id="favorite-btn" variant="primary">
+          Favorite
+        </Button>
       </Card.Body>
     </Card>
   );

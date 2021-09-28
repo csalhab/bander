@@ -4,7 +4,7 @@ import { useProfileReducer } from "./reducers";
 const ProfileContext = createContext();
 const { Provider } = ProfileContext;
 
-const ProfileProvider = ({...props }) => {
+const ProfileProvider = ({ ...props }) => {
   const [state, dispatch] = useProfileReducer({
     me: {
       _id: "",
@@ -14,6 +14,7 @@ const ProfileProvider = ({...props }) => {
       instrument: [],
       category: [],
       description: "",
+
       image: "",
       facts: "",
       bio: "",

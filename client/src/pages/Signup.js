@@ -11,6 +11,10 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
+    instrument: "",
+    description: "",
+    contact: "",
+    zip: "",
   });
 
   //Global Context
@@ -45,6 +49,10 @@ const Signup = () => {
       username: "",
       email: "",
       password: "",
+      instrument: "",
+      description: "",
+      contact: "",
+      zip: "",
     });
   };
 
@@ -89,6 +97,54 @@ const Signup = () => {
             placeholder="Password"
             onChange={handleInputChange}
             value={userFormData.password}
+            required
+          ></input>
+        </div>
+        <div class="form-group">
+          <label htmlFor="instrument">Instrument</label>
+          <input
+            type="text"
+            className="form-control"
+            name="instrument"
+            placeholder="Instrument"
+            onChange={handleInputChange}
+            value={userFormData.instrument}
+            required
+          ></input>
+        </div>
+        <div class="form-group">
+          <label htmlFor="description">Description</label>
+          <input
+            type="text"
+            className="form-control"
+            name="description"
+            placeholder="Description"
+            onChange={handleInputChange}
+            value={userFormData.description}
+            required
+          ></input>
+        </div>
+        <div class="form-group">
+          <label htmlFor="contact">Contact Info</label>
+          <input
+            type="text"
+            className="form-control"
+            name="contact"
+            placeholder="Enter how you'd like other users to contact you:"
+            onChange={handleInputChange}
+            value={userFormData.contact}
+            required
+          ></input>
+        </div>
+        <div class="form-group">
+          <label htmlFor="zip">ZIP Code</label>
+          <input
+            type="text"
+            className="form-control"
+            name="zip"
+            placeholder="ZIP Code"
+            onChange={handleInputChange}
+            value={userFormData.zip}
             required
           ></input>
         </div>

@@ -11,31 +11,43 @@ import { GET_ME } from "../utils/queries";
 import Footer from "../components/Footer";
 import UserCard from "../components/UserCard";
 
-const searchUser = () => {
-  const [searchedUsers, setSearchedusers] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [savedUserIds, setSavedUserIds] = useState(getSavedUserIds());
+// const searchUser = () => {
+//   const [searchedUsers, setSearchedusers] = useState([]);
+//   const [searchInput, setSearchInput] = useState("");
+//   const [savedUserIds, setSavedUserIds] = useState(getSavedUserIds());
 
-  // Save Users to Favorites
-  useEffect(() => {
-    return () => savedUserIds(savedUserIds);
-  });
+//   // Save Users to Favorites
+//   useEffect(() => {
+//     return () => savedUserIds(savedUserIds);
+//   });
 
-  const [saveUser, { error }] = useMutation(SAVE_USER, {
-    update(cache, data, saveUser) {
-      try {
-        const { me } = cache.readQuery({ query: GET_ME });
+//   const [saveUser, { error }] = useMutation(SAVE_USER, {
+//     update(cache, data, saveUser) {
+//       try {
+//         const { me } = cache.readQuery({ query: GET_ME });
 
-        cache.writeQuery({
-          query: GET_ME,
-          data: { me: saveUser },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
-};
+//         cache.writeQuery({
+//           query: GET_ME,
+//           data: { me: saveUser },
+//         });
+//       } catch (e) {
+//         console.error(e);
+//       }
+//     },
+//   });
+// };
+
+// const handleFormSubmit = async (event) => {
+//   event.preventDefault();
+
+//   if (!searchInput) {
+//     return false;
+//   }
+
+//   try {
+//     const response = await
+//   }
+// }
 
 const Home = () => {
   const [state, dispatch] = useProfileContext();

@@ -90,15 +90,10 @@ function Header({ children }) {
                 </form>
               </div>
             </nav>
-<<<<<<< HEAD
-            <div style={styles.buttonContainer} className="container"></div>
-=======
->>>>>>> 75704f6796decaff38965a80881d96b041c7e450
+            <div className="container"></div>
           </>
         ) : (
-          
           <>
-            
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-style">
               <a class="navbar-brand" href="#">
                 Bander

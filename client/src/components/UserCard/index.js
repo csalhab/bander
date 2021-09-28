@@ -18,7 +18,9 @@ function UserCard() {
         <Card.Title className="name">User Name</Card.Title>
         <Card.Text className="userShortBio">User Description</Card.Text>
         <Card.Text className="userInstrument">User Instrument </Card.Text>
-        <Button variant="primary">Go to Profile</Button>
+        <Card.Text className="userContact">User Contact</Card.Text>
+        <Card.Text className="userZip">User Zip</Card.Text>
+        <Button variant="primary">Favorite</Button>
       </Card.Body>
     </Card>
   );

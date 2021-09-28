@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProfileContext } from "../utils/GlobalState";
 import SignupButton from "../components/SignupButton";
 import LoginButton from "../components/LoginButton";
@@ -10,6 +10,32 @@ import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import Footer from "../components/Footer";
 import UserCard from "../components/UserCard";
+
+const searchUser = () => {
+  const [searchedUsers, setSearchedusers] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [savedUserIds, setSavedUserIds] = useState(getSavedUserIds());
+
+  // Save Users to Favorites
+  useEffect(() => {
+    return () => savedUserIds(savedUserIds);
+  });
+
+  const [saveUser, { error }] = useMutation(SAVE_USER, {
+    update(cache, data, saveUser) {
+      try {
+        const { me } = cache.readQuery({ query: GET_ME });
+
+        cache.writeQuery({
+          query: GET_ME,
+          data: { me: saveUser },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+};
 
 const Home = () => {
   const [state, dispatch] = useProfileContext();

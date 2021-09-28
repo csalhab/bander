@@ -90,9 +90,7 @@ function Header({ children }) {
                 </form>
               </div>
             </nav>
-            <div style={styles.buttonContainer} className="container">
-              <LogoutButton></LogoutButton>
-            </div>
+            <div style={styles.buttonContainer} className="container"></div>
           </>
         ) : (
           <>

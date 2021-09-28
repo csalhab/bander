@@ -81,6 +81,7 @@ function Header({ children }) {
                     <Nav.Link onClick={() => Auth.logout()}>Logout</Nav.Link>
                   </li>
                 </ul>
+<<<<<<< HEAD
                 <form class="form-inline my-2 my-lg-0">
                   <input
                     class="form-control mr-sm-2"
@@ -96,13 +97,19 @@ function Header({ children }) {
                     Search
                   </button>
                 </form>
+=======
+>>>>>>> e48f189e879b3fec3edd6c6866dfbebbc21d14ec
               </div>
             </nav>
             <div className="container"></div>
           </>
         ) : (
           <>
+<<<<<<< HEAD
             <nav class="navbar navbar-expand-lg navbar-dark text-white bg-dark navbar-style">
+=======
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-style">
+>>>>>>> e48f189e879b3fec3edd6c6866dfbebbc21d14ec
               <a class="navbar-brand" href="#">
                 Bander
               </a>
@@ -142,20 +149,6 @@ function Header({ children }) {
                     <Nav.Link href="/signup">Sign Up</Nav.Link>
                   </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                  <input
-                    class="form-control mr-sm-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  ></input>
-                  <button
-                    class="btn btn-outline-success my-2 my-sm-0"
-                    type="submit"
-                  >
-                    Search
-                  </button>
-                </form>
               </div>
             </nav>
           </>

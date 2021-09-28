@@ -67,7 +67,7 @@ const UserProfile = () => {
       <p>This is the user profile page.</p>
       <div class="row">
         <div class="col">
-          <img src="" alt="Profile" />
+          <img src="assets/images/avatar.png" alt="Profile" />
         </div>
         <div class="col">
           <div>

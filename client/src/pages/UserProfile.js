@@ -8,7 +8,6 @@ import { QUERY_PROFILE, GET_ME } from "../utils/queries";
 
 const UserProfile = () => {
   const [formState, setFormState] = useState({
-    available: false,
     zip: "",
     instrument: "",
     category: "",
@@ -91,18 +90,6 @@ const UserProfile = () => {
           className="flex-row justify-center justify-space-between-md align-center"
           onSubmit={handleFormSubmit}
         >
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="available"
-              onChange={handleChange}
-            />
-            <label className="form-check-label" for="available">
-              Available
-            </label>
-          </div>
           <div class="form-group" className="col-12 col-lg-9">
             <input
               name="zip"

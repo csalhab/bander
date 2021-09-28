@@ -6,7 +6,6 @@ export const GET_ME = gql`
       _id
       username
       email
-      available
       zip
       instrument
       category
@@ -21,7 +20,13 @@ export const GET_ME = gql`
 export const QUERY_PROFILE = gql`
   query getProfile {
     getProfile {
+      zip
+      instrument
+      category
       description
+      image
+      facts
+      bio
     }
   }
 `;

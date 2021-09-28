@@ -1,9 +1,6 @@
 const { Schema, model } = require("mongoose");
 
 const profileSchema = new Schema({
-  available: {
-    type: Boolean,
-  },
   zip: {
     type: String,
   },

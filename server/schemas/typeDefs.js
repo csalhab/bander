@@ -6,7 +6,6 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    available: Boolean
     zip: String
     instrument: [String]
     category: [String]
@@ -18,7 +17,6 @@ const typeDefs = gql`
 
   type Profile {
     _id: ID
-    available: Boolean
     zip: Int
     instrument: [String]
     category: [String]
@@ -43,14 +41,13 @@ const typeDefs = gql`
     login(username: String!, email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     updateUserProfile(
-      available: Boolean!
-      zip: String!
-      instrument: [String]!
-      category: [String]!
-      description: String!
-      image: String!
-      facts: String!
-      bio: String!
+      zip: String
+      instrument: [String]
+      category: [String]
+      description: String
+      image: String
+      facts: String
+      bio: String
     ): User
   }
 `;

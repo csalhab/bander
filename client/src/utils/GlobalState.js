@@ -10,7 +10,6 @@ const ProfileProvider = ({ ...props }) => {
       _id: "",
       username: "",
       email: "",
-      available: false,
       instrument: [],
       category: [],
       description: "",

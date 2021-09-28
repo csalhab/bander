@@ -8,7 +8,6 @@ export const LOGIN_USER = gql`
         _id
         username
         email
-        available
         zip
         instrument
         category
@@ -36,17 +35,15 @@ export const ADD_USER = gql`
 
 export const ADD_PROFILE = gql`
   mutation updateUserProfile(
-    $available: Boolean!
-    $zip: String!
-    $instrument: [String]!
-    $category: [String]!
-    $description: String!
-    $image: String!
-    $facts: String!
-    $bio: String!
+    $zip: String
+    $instrument: [String]
+    $category: [String]
+    $description: String
+    $image: String
+    $facts: String
+    $bio: String
   ) {
     updateUserProfile(
-      available: $available
       zip: $zip
       instrument: $instrument
       category: $category
@@ -59,7 +56,6 @@ export const ADD_PROFILE = gql`
       username
       email
       password
-      available
       zip
       instrument
       category

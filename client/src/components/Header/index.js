@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const styles = {
   buttonContainer: {
     margin: 20,
-    background: "#e8eaf6",
+    // background: "#e8eaf6",
     display: "flex",
     flexDirection: "row",
     justifyContent: "right",
@@ -27,8 +27,8 @@ const styles = {
 
 function Header({ children }) {
   return (
-    <div>
-      <div class="jumbotron">
+    <div class="bg-dark text-white">
+      <div class="jumbotron bg-dark text-white" id="jumbotron">
         <h1 class="display-4">Bander</h1>
         <p class="lead">The premiere service for finding other musicians.</p>
         <hr class="my-4"></hr>
@@ -37,7 +37,10 @@ function Header({ children }) {
       <div>
         {Auth.loggedIn() ? (
           <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-style">
+            <nav
+              id="navbar"
+              class="navbar navbar-expand-lg navbar-dark bg-dark navbar-style"
+            >
               <a class="navbar-brand" href="#">
                 Bander
               </a>
@@ -53,7 +56,11 @@ function Header({ children }) {
                 <span class="navbar-toggler-icon"></span>
               </button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                id="navbar"
+                class="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
                     <a class="nav-link" href="/">
@@ -83,6 +90,7 @@ function Header({ children }) {
                   ></input>
                   <button
                     class="btn btn-outline-success my-2 my-sm-0"
+                    id="nav-submit-btn"
                     type="submit"
                   >
                     Search
@@ -152,7 +160,6 @@ function Header({ children }) {
             </nav>
           </>
         )}
-        ;
       </div>
     </div>
   );

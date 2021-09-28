@@ -13,7 +13,7 @@ import Button from "react-bootstrap/Button";
 
 function UserCard() {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card id="card-style" style={{ width: "18rem" }}>
       <Card.Body>
         <Card.Title className="name">User Name</Card.Title>
         <Card.Text className="userShortBio">User Description</Card.Text>

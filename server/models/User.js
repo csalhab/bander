@@ -17,9 +17,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    available: {
-      type: Boolean,
-    },
     zip: {
       type: String,
     },

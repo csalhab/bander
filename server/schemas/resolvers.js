@@ -41,36 +41,29 @@ const resolvers = {
     },
     updateUserProfile: async (
       parent,
-      {
-        available,
-        zip,
-        instrument,
-        category,
-        description,
-        image,
-        facts,
-        bio,
-        reviews,
-      },
+      args,
+      // { zip, instrument, category, description, image, facts, bio, reviews },
       context
     ) => {
       console.log("inside resolver addProfile!");
+      console.log("args: ", args);
       const user = await User.findById(context.user._id);
       if (user) {
-        return User.findOneAndUpdate(
+        const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          {
-            available,
-            zip,
-            instrument,
-            category,
-            description,
-            image,
-            facts,
-            bio,
-          },
+          // {
+          //   zip,
+          //   instrument,
+          //   category,
+          //   description,
+          //   image,
+          //   facts,
+          //   bio,
+          // },
+          { $addToSet: { user: args } },
           { new: true }
         );
+        return updatedUser;
       } else {
         throw new AuthenticationError("You must be logged in.");
       }

@@ -57,7 +57,7 @@ const Home = () => {
 
   if (Auth.loggedIn()) {
     return (
-      <div className="container">
+      <div className="container text-center text-white bg-dark">
         <SearchBar></SearchBar>
         <SearchButton></SearchButton>
         <div>
@@ -66,7 +66,7 @@ const Home = () => {
         </div>
         {/* <Footer></Footer> */}
 
-        <div class="row">
+        <div class="row text-center">
           <div class="col-sm">
             <UserCard />
           </div>
@@ -81,7 +81,7 @@ const Home = () => {
     );
   } else {
     return (
-      <div className="container">
+      <div className="container text-white bg-dark">
         <div>you are logged out, info to be added ..</div>
       </div>
     );

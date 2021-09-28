@@ -102,7 +102,7 @@ function Header({ children }) {
           </>
         ) : (
           <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-style">
+            <nav class="navbar navbar-expand-lg navbar-dark text-white bg-dark navbar-style">
               <a class="navbar-brand" href="#">
                 Bander
               </a>

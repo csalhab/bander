@@ -31,3 +31,8 @@
   background-color: red !important;
   color: black;
 }
+
+.blank-space {
+  height: 100%;
+  width: 100%;
+}

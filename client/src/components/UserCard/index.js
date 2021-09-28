@@ -23,7 +23,6 @@ function UserCard() {
         <Card.Text className="userShortBio">User Description</Card.Text>
         <Card.Text className="userInstrument">User Instrument </Card.Text>
         <Card.Text className="userContact">User Contact</Card.Text>
-        <Card.Text className="userZip">User Zip</Card.Text>
         <Button className="bg-dark" id="favorite-btn" variant="primary">
           Favorite
         </Button>

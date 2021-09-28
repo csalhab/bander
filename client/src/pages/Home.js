@@ -10,6 +10,8 @@ import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import Footer from "../components/Footer";
 import UserCard from "../components/UserCard";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 // const searchUser = () => {
 //   const [searchedUsers, setSearchedusers] = useState([]);
@@ -45,9 +47,27 @@ import UserCard from "../components/UserCard";
 //   }
 
 //   try {
-//     const response = await
+//     const response = await searchUsers(searchInput);
+
+//     if (!response.ok) {
+//       throw new Error("something went wrong!");
+//     }
+
+//     const { items } = await response.json();
+
+//     const userData = items.map((user) => ({
+//       userName: user.username,
+//       email: user.email,
+//       description: user.description,
+//       instrument: user.instrument,
+//     }));
+
+//     setSearchedUsers("userData");
+//     setSearchInput("");
+//   } catch (err) {
+//     console.error(err);
 //   }
-// }
+// };
 
 const Home = () => {
   const [state, dispatch] = useProfileContext();
@@ -68,13 +88,63 @@ const Home = () => {
 
         <div class="row text-center">
           <div class="col-sm">
-            <UserCard />
+            <Card
+              id="red-border"
+              className="bg-dark text-white"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title className="name">John Petrucci</Card.Title>
+                <Card.Text className="userShortBio">300 BPM or bust.</Card.Text>
+                <Card.Text className="userInstrument">Guitar </Card.Text>
+                <Card.Text className="userContact">
+                  noodles@dreamtheater.com
+                </Card.Text>
+                <Button className="bg-dark" id="favorite-btn" variant="primary">
+                  Favorite
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
           <div class="col-sm">
-            <UserCard />
+            <Card
+              id="red-border"
+              className="bg-dark text-white"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title className="name">Adam Jones</Card.Title>
+                <Card.Text className="userShortBio">
+                  If you've played in 4/4 in the last 7 years, don't bother.
+                </Card.Text>
+                <Card.Text className="userInstrument">Guitar </Card.Text>
+                <Card.Text className="userContact">
+                  adamjones@tool.net
+                </Card.Text>
+                <Button className="bg-dark" id="favorite-btn" variant="primary">
+                  Favorite
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
           <div class="col-sm">
-            <UserCard />
+            <Card
+              id="red-border"
+              className="bg-dark text-white"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title className="name">Mikael Akerfeldt</Card.Title>
+                <Card.Text className="userShortBio">
+                  Sorrow! I only write songs about sorrow!
+                </Card.Text>
+                <Card.Text className="userInstrument">Guitar </Card.Text>
+                <Card.Text className="userContact">mikael@opeth.com</Card.Text>
+                <Button className="bg-dark" id="favorite-btn" variant="primary">
+                  Favorite
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>

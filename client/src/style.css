@@ -18,6 +18,16 @@
   color: black;
 }
 
-#card-style {
+#red-border {
   border-color: red;
+}
+
+#favorite-btn {
+  border-color: red;
+  color: red;
+}
+
+#favorite-btn:hover {
+  background-color: red !important;
+  color: black;
 }
